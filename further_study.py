@@ -30,8 +30,11 @@ def custom_len(input_list):
         8
 
     """
+    list_count = 0
+    for item in input_list:
+        list_count += 1
 
-    return 0
+    return list_count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -58,8 +61,7 @@ def custom_append(input_list, value):
         True
 
     """
-
-    pass
+    input_list[8:] = [value]
 
 
 def custom_extend(input_list, second_list):
@@ -77,8 +79,8 @@ def custom_extend(input_list, second_list):
         True
 
     """
+    input_list[3:] = second_list
 
-    pass
 
 
 def custom_insert(input_list, index, value):
@@ -96,7 +98,7 @@ def custom_insert(input_list, index, value):
 
     """
 
-    pass
+    input_list[index:] = [value] + input_list[index:]
 
 
 def custom_remove(input_list, value):
@@ -114,8 +116,9 @@ def custom_remove(input_list, value):
         True
 
     """
+    place = input_list.index(value)
+    del input_list[place]
 
-    pass
 
 
 def custom_pop(input_list):
@@ -133,8 +136,10 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
+    last_item = input_list[-1]
+    del input_list[-1]
+    return last_item
 
-    return None
 
 
 def custom_index(input_list, value):
@@ -149,8 +154,11 @@ def custom_index(input_list, value):
         1
 
     """
+    for ind in range(len(input_list)):
+        if input_list[ind] == value:
+            break
 
-    return 0
+    return ind
 
 
 def custom_count(input_list, value):
@@ -165,8 +173,11 @@ def custom_count(input_list, value):
         2
 
     """
-
-    return 0
+    count = 0
+    for item in input_list:
+        if item == value:
+            count += 1
+    return count
 
 
 def custom_reverse(input_list):
@@ -185,7 +196,8 @@ def custom_reverse(input_list):
 
     """
 
-    pass
+    reverse_lst = []
+    
 
 
 def custom_contains(input_list, value):
